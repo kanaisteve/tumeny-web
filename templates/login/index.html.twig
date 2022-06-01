@@ -1,0 +1,51 @@
+{% extends 'auth.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+  <div class="card mb-3">
+    <div class="card-body">
+
+      <div class="pt-4 pb-2">
+        <a href="/"> <h5 class="card-title text-center pb-0 fs-4" style="color: #009961;">TuMeNy</h5></a>
+        <p class="text-center text-xs">Enter your username & password to login</p>
+      </div>
+    
+      {% if error %}
+          <div class="text-xs text-danger text-center mb-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+      {% endif %}
+
+      <form class="row g-3" method="POST" action="">
+
+        <div class="col-12">
+          {# <label for="email" class="form-label">Username</label> #}
+          <input type="email" name="_username" class="form-control shadow-none" id="username" value="" placeholder="Enter your email " required>
+        </div>
+
+        <div class="col-12">
+          {# <label for="password" class="form-label">Password</label> #}
+          <input type="password" name="_password" class="form-control shadow-none" id="password" placeholder="Enter your password" required>
+          {# @error('password')
+              <span class="text-xs text-danger">{{ $message }}</span>
+          @enderror #}
+        </div>
+
+        {# <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="remember" id="remember" style="color: #009961;" >
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+        </div> #}
+
+        <div class="col-12i mt-4 mb-2">
+          <button class="btn btn-success w-100" type="submit">Login</button>
+          <a class="btn btn-link p-0 mt-2 text-success text-xs" href="">Forgot Your Password?</a>
+        </div>
+        <div class="col-12">
+          <p class="small mb-0">Don't have account? <a href="/register" style="color: #009961;">Create an account</a></p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

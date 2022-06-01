@@ -1,0 +1,183 @@
+<section class="section contact">
+  <div class="row gy-4">
+
+    <!-- Contact Form -->
+    <div class="col-12">
+      <div class="card p-4">
+        <div class="card-body pb-0">
+          <form action="" method="post">
+            @csrf
+
+            <div class="row gy-4">
+              <div class="col-sm-12">
+                <p class="font-weight-medium mb-0">Loan Details</p>
+              </div>
+
+              {{-- Loan Amount --}}
+              <div class="col-sm-6">
+                {{-- <label for="name" class="form-label">Your Name</label> --}}
+                <input type="text" class="form-control shadow-none" id="loanamount" name="loanamount" placeholder="Loan Amount" value="{{ old('loanamount') }}" required>
+                @error('loanamount')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror
+              </div>
+
+              {{-- Duration --}}
+              <div class="col-sm-3">
+                {{-- <label for="duration" class="form-label">Loan Duration</label> --}}
+                {{-- <input type="email" class="form-control shadow-none" id="duration" name="duration" placeholder="Loan Duration" value="{{ old('duration') }}" required> --}}
+                <select name="duration" id="duration" class="form-select form-select-sm shadow-none">
+                  <option value="1">1 Week</option>
+                  <option value="2">2 Weeks</option>
+                  <option value="3">3 Weeks</option>
+                  <option value="4">4 Weeks</option>
+                </select>
+                @error('duration')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror
+              </div>
+
+              {{-- Interest Rate --}}
+              <div class="col-sm-3">
+                {{-- <label for="subject" class="form-label">Subject</label> --}}
+                <input type="number" class="form-control shadow-none" id="rate" name="rate" placeholder="Interest Rate" value="{{ old('rate') }}" required>
+                @error('rate')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror
+              </div>
+
+              <div class="col-sm-12">
+                <p class="font-weight-medium mb-0">Collateral Details</p>
+              </div>
+
+              <div class="col-sm-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Brand</th>
+                      <th>Serial Number</th>
+                      <th>Description</th>
+                      <th>Price (ZMW)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="pb-0">1</td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="brandname" id="brandname" placeholder="Brandname">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="serialnumber" id="serialnumber" placeholder="Serial number">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <textarea class="form-control shadow-none" name="description" id="description" cols="10" rows="3"></textarea>
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="price" id="price" placeholder="2000">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pb-0">2</td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="brandname2" id="brandname2" placeholder="Brandname">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="serialnumber2" id="serialnumber2" placeholder="Serial number">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <textarea class="form-control shadow-none" name="description2" id="description2" cols="10" rows="3"></textarea>
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="price2" id="price2" placeholder="5000">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pb-0">3</td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="brandname3" id="brandname3" placeholder="Brandname">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="serialnumber3" id="serialnumber3" placeholder="Serial number">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <textarea class="form-control shadow-none" name="description3" id="description3" cols="10" rows="3"></textarea>
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="price3" id="price3" placeholder="8000">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pb-0">4</td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="brandname4" id="brandname4" placeholder="Brandname">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="serialnumber4" id="serialnumber4" placeholder="Serial number">
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <textarea class="form-control shadow-none" name="description4" id="description4" cols="10" rows="3"></textarea>
+                        </div>
+                      </td>
+                      <td class="pb-0">
+                        <div class="mb-1">
+                          <input type="text" class="form-control shadow-none" name="price4" id="price4" placeholder="23000">
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mb-3">
+                <label for="collateral_val" class="form-label">Collateral Value</label>
+                <input type="text" class="form-control shadow-none" name="collateral_val" id="collateral_val" placeholder="Collateral Value">
+              </div>
+
+              <div class="col-sm-12">
+                <p class="font-weight-medium mb-0">Upload Documents</p>
+              </div>
+
+              <div class="text-center">
+                @if (session('success'))
+                    <p class="text-success my-2">{{ session('success') }}</p>
+                @endif
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

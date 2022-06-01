@@ -1,0 +1,214 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+<!-- Page Title -->
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      {# <li class="breadcrumb-item active">{{ home }}</li> #}
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+        <!-- Left side columns -->
+        <div class="col-sm-12">
+            <div class="row">
+                <!-- Loans Disbursed Card -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card info-card revenue-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                  <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Loans Disbursed</h5>
+
+                            <div class="d-flex align-items-center">
+                                {{-- <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-wallet2"></i>
+                                </div> --}}
+                                <div>
+                                    <h6>K3,264</h6>
+                                    <span class="text-success small pt-1 fw-bold">No. of Disbursed:</span> <span class="text-muted small pt-2 ps-1">17</span>
+                                    <!--<span class="text-success small pt-1 fw-bold">Merchant Code:</span> <span class="text-muted small pt-2 ps-1">1760000280</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Loans Disbursed Card -->
+
+                <!-- Pending Card -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card info-card sales-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start"><h6>Filter</h6></li>
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Total Pendings <span></span></h5>
+
+                            <div class="d-flex align-items-center">
+                                {{-- <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                  <i class="bi bi-cart"></i>
+                                </div> --}}
+                                <div>
+                                  <h6>K14,500</h6>
+                                  <span class="text-success small pt-1 fw-bold">No. of Pending</span> <span class="text-muted small pt-2 ps-1">08</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Pending Card -->
+
+                <!-- Interest Earnings Card -->
+                <div class="col-md-6 col-xl-3">
+
+                    <div class="card info-card customers-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                  <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Earnings </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div>
+                                  <h6>K12,440</h6>
+                                  <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- End Interest Earnings Card -->
+
+                <!-- Collateral Card -->
+                <div class="col-md-6 col-xl-3">
+
+                    <div class="card info-card customers-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                  <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Collateral </h5>
+
+                            <div class="d-flex align-items-center">
+                                <div>
+                                  <h6>K12,440</h6>
+                                  <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- End Collateral Card -->
+
+                <!-- Pending Loans -->
+                <div class="col-12">
+                    <div class="card recent-sales">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                  <h6>Filter</h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Pending Loans <span>| Today</span></h5>
+
+                            {{-- @if ($loans->count()) --}}
+                            <table class="table table-hover datatable">
+                                <thead>
+                                    <tr class="font-size-14">
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Customer</th>
+                                        <th scope="col">Principal</th>
+                                        <th scope="col">Duration</th>
+                                        <th scope="col">IR</th>
+                                        <th scope="col">Earnings</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {# @foreach ($loans as $loan)
+                                        <tr class="font-size-12">
+                                          <th scope="row">{{ $counter++ }}</th>
+                                          <td>{{ $loan->created_at->format('M j, Y') }}</td>
+                                          <td>{{ $loan->borrower->name }}</td>
+                                          <td>{{ $loan->amount }}</td>
+                                          <td>{{ $loan->duration }} Week(s)</td>
+                                          <td>{{ $loan->rate }}%</td>
+                                          <td>ZMW {{ $loan->earning }}</td>
+                                          <td><span class="badge bg-success">{{ $loan->status }}</span></td>
+                                        </tr>
+                                    @endforeach  #}
+                                </tbody>
+                            </table>
+                            {# @else 
+                                <p class="text-center">No loans yet. Please check back later.</p>
+                            @endif  #}
+                        </div>
+
+                    </div>
+                </div><!-- End Pending Loans -->
+            </div>
+        </div>
+        <!-- End Left side columns -->
+    </div>
+</section>
+{% endblock %}

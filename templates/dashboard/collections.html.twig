@@ -1,0 +1,73 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+<!-- Page Title -->
+<div class="pagetitle">
+  <h1>{{ pageTitle }}</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+      <li class="breadcrumb-item active">{{ pageTitle }}</li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+<section class="section contact">
+    <div class="row gy-4">
+
+        <!-- Recent Transaction -->
+        <div class="col-12">
+            <div class="card recent-sales">
+
+                <div class="card-body pt-3">
+                    {# <h5 class="card-title">Recent Sales <span>| Today</span></h5> #}
+
+                    <table class="table table-borderless datatable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Transaction Date</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Transaction ID</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><a href="#">2022-05-17</a></th>
+                                <td>Brandon Jacob</td>
+                                <td><a href="#" class="text-success">Sale</a></td>
+                                <td>1234-5678-9012-3456</td>
+                                <td>K64</td>
+                                <td><span class="btn btn-success btn-xs"><i class="bi bi-info-circle"></i></span></td>
+                                {# <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button> #}
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">2022-04-04</a></th>
+                                <td>Angus Grady</td>
+                                <td><a href="#" class="text-success">Sale</a></td>
+                                <td>1234-5678-9012-3456</td>
+                                <td>K67</td>
+                                <td><span class="btn btn-success btn-xs"><i class="bi bi-info-circle"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">2022-04-24</a></th>
+                                <td>Raheem Lehner</td>
+                                <td><a href="#" class="text-success">Sale</a></td>
+                                <td>1234-5678-9012-3456</td>
+                                <td>K165</td>
+                                <td><span class="btn btn-success btn-xs"><i class="bi bi-info-circle"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div><!-- End Recent Transaction -->
+
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+            <h2>Contact</h2>
+            <p>Contact Us</p>
+        </header>
+
+        <div class="row gy-4">
+
+            {# <div class="col-lg-6">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-geo-alt"></i>
+                            <h3>Address</h3>
+                            <p>26454 Kasama Road, Hillview<br>Lusaka, Zambia</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-telephone"></i>
+                            <h3>Call Us</h3>
+                            <p>+31 6 13063536<br>+26 0 975651046</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>info@tumenypay.com<br>contact@tumenypay.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-clock"></i>
+                            <h3>Open Hours</h3>
+                            <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div> #}
+
+            <div class="col-lg-12">
+                {{ form_start(contactUsForm, { 'attr' : { 'class': 'contact-us' } }) }}
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                           {{ form_row(contactUsForm.name) }}
+                        </div>
+
+                        <div class="col-md-6 ">
+                            {{ form_row(contactUsForm.email) }}
+                        </div>
+
+                        <div class="col-md-12">
+                            {{ form_row(contactUsForm.subject) }}
+                        </div>
+
+                        <div class="col-md-12">
+                            {{ form_row(contactUsForm.body) }}
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                {{ form_end(contactUsForm) }}
+            </div>
+
+        </div>
+
+    </div>

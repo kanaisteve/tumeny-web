@@ -1,0 +1,120 @@
+
+/*--------------------------------------------------------------
+# Pricing II
+--------------------------------------------------------------*/
+.license-compare {
+    margin-top: 40px;
+}
+  
+.license-compare .features-list {
+  margin-top: 137px;
+}
+  
+.license-compare .features-list ul {
+  background: #f7f9fc;
+  list-style: none;
+  padding: 0;
+}
+
+.license-compare .features-list li:nth-child(odd) {
+    background: #fdfefe;
+}
+
+.license-compare .features-list li {
+    height: 44px;
+    padding: 0 10px;
+    font-size: 15px;
+    border-top: 1px solid #eef3f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.license-compare .licenses .title {
+  padding: 5px;
+  text-align: center;
+  background: #eef3f9;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 4px solid #fff;
+  height: 52px;
+  overflow: hidden;
+}
+  
+.license-compare .licenses .price {
+  text-align: center;
+  padding: 15px;
+  background: #f7f9fc;
+  height: 98px;
+  overflow: hidden;
+}
+  
+.license-compare .licenses .features {
+  background: #f7f9fc;
+}
+
+.license-compare .licenses .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.license-compare .licenses .features li:nth-child(odd) {
+    background: #fdfefe;
+}
+  
+.license-compare .licenses .action {
+  padding: 10px;
+  border-radius: 0 0 4px 4px;
+  border-top: 4px solid #fff;
+  text-align: center;
+  background: #eef3f9;
+}
+
+@media (min-width: 1200px)
+.license-compare .licenses .features li:nth-child(odd) {
+    background: #fdfefe;
+}
+
+@media (min-width: 1200px)
+.license-compare .licenses .features li {
+    height: 44px;
+    font-weight: 400;
+}
+
+.license-compare .licenses .features li {
+    padding: 10px;
+    font-size: 15px;
+    border-top: 1px solid #eef3f9;
+    font-weight: 600;
+}
+  
+license-compare .licenses .features li {
+  padding: 10px;
+  font-size: 15px;
+  border-top: 1px solid #eef3f9;
+  font-weight: 600;
+}
+
+
+  
+.license-compare .licenses .features .icon-check {
+  color: #00c560;
+}
+  
+.license-compare .licenses .features li .feature-title {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.licenses .price h3 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  color: #21413C;
+  /* color: #023b6d; */
+  font-weight: 500;
+}
+  
+  

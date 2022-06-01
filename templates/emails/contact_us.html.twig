@@ -1,0 +1,20 @@
+{% apply inline_css %}
+    <style>
+        {# here, define your CSS styles as usual #}
+        h1 {
+            color: #21413C;
+        }
+    </style>
+
+    <h1>{{ subject }}</h1>
+
+    <p>{{ body }}</p>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Name: <code><a href="">{{ name }}</a></code></li>
+        <li>Email: <code><a href="">{{ userEmail  }}</a></code></li>
+    </ul>
+{% endapply %}
+
+

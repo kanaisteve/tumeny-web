@@ -1,0 +1,87 @@
+{% extends "home/base.html.twig" %}
+
+{% block body %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    {% include 'home/index/hero.twig' %}
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      {% include 'home/index/about.twig' %}
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    {# <section id="values" class="values">
+      {% include 'home/index/values.twig' %}
+    </section> #}
+    <!-- End Values Section -->
+
+    <!-- ======= Counts Section ======= -->
+    {# <section id="counts" class="counts">
+        {% include 'home/index/counts.twig' %}
+    </section> #}
+    <!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+        {% include 'home/index/features.twig' %}
+    </section><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        {% include 'home/index/services.twig' %}
+    </section><!-- End Services Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      {% include 'home/index/pricing.twig' %}
+    </section>
+    <!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+        {% include 'home/index/faqs.twig' %}
+    </section>
+    <!-- End F.A.Q Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    {# <section id="portfolio" class="portfolio">
+        {% include 'home/index/portfolio.twig' %}
+    </section> #}
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    {# <section id="testimonials" class="testimonials">
+        {% include 'index/testimonials.html.twig' %}
+    </section> #}
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    {# <section id="team" class="team">
+        {% include 'index/team.html.twig' %}
+    </section> #}
+    <!-- End Team Section -->
+
+    <!-- ======= Clients Section ======= -->
+    {# <section id="clients" class="clients">
+        {% include 'index/clients.html.twig' %}
+    </section> #}
+    <!-- End Clients Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    {# <section id="recent-blog-posts" class="recent-blog-posts">
+      {% include 'index/recent_posts.twig' %}
+    </section> #}
+    <!-- End Recent Blog Posts Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      {{ include('home/index/contact.twig') }} 
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+{% endblock %}
