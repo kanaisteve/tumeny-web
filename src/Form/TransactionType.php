@@ -29,6 +29,22 @@ class TransactionType extends AbstractType
                     'placeholder' => 'Enter customer name'
                 ],
             ])
+            ->add('productName', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    // 'autocomplete' => 'product',                     
+                    'class' => 'form-control shadow-none',
+                    'placeholder' => 'Enter product name',
+                ],
+            ])
+            ->add('qty', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    // 'autocomplete' => 'product',                     
+                    'class' => 'form-control shadow-none',
+                    'placeholder' => 'Enter qty',
+                ],
+            ])
             ->add('txnType', TextType::class, [
                 'label' => false,
                 'attr' => [
@@ -37,7 +53,7 @@ class TransactionType extends AbstractType
                     'placeholder' => 'Enter transaction type'
                 ],
             ])
-            ->add('txnId', TextType::class, [
+            ->add('txnId', IntegerType::class, [
                 'label' => false,
                 'attr' => [
                     // 'autocomplete' => 'txnId',                     

@@ -33,7 +33,7 @@ class TransactionController extends AbstractController
         ]);
     }
 
-    #[Route('/transactions/new', methods: ['GET', 'POST'], name: 'create_transaction')]
+    #[Route('/transactions/new-sale', methods: ['GET', 'POST'], name: 'create_sale')]
     public function new(Request $request, FileUploader $fileUploader)
     {
         $transaction = new Transaction();
@@ -60,7 +60,7 @@ class TransactionController extends AbstractController
         }
 
         return $this->render('transaction/new.html.twig', [
-            'pageTitle' => 'Add New Transaction',
+            'pageTitle' => 'Add Sale',
             'transactionForm' => $form->createView()
         ]);
     }

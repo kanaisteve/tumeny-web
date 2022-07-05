@@ -1,0 +1,77 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+    <!-- Page Title -->
+    <div class="pagetitle">
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">Home </a>/ Testimonials</li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section contact">
+        <div class="row gy-4">
+
+            <!-- Edit Testimonial Form -->
+            <div class="col-12">
+                <div class="card p-4">
+                    <div class="card-body pb-0">
+                        {{ form_start(form) }}
+                            {# {{ form_errors(form) }}#}
+                            <div class="row gy-4">
+                                <div class="col-md-12">
+                                    {{ form_row(form.name) }}
+                                    {{ form_errors(form.name) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.position) }}
+                                    {{ form_errors(form.position) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.content) }}
+                                    {{ form_errors(form.content) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.company) }}
+                                    {{ form_errors(form.company) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.city) }}
+                                    {{ form_errors(form.city) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.country) }}
+                                    {{ form_errors(form.country) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.status) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.avatar) }}
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    {{ form_row(form.save, { 'label': 'Update Testimonial' }) }}
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <!-- End Tag Form -->
+        </div>
+    </section>
+{% endblock %}
+

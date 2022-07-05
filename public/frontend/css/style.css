@@ -106,7 +106,7 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #009961;
+  color: #fff;
   content: "/";
 }
 
@@ -1487,7 +1487,7 @@ section {
   margin: 0 0 20px 0;
 }
 .blog .entry .entry-title a {
-  color: #009961;
+  color: #21413C;
   transition: 0.3s;
 }
 .blog .entry .entry-title a:hover {
@@ -1631,7 +1631,7 @@ section {
   font-size: 22px;
   margin-bottom: 0px;
   padding: 0;
-  color: #009961;
+  color: #21413C;
 }
 .blog .blog-author .social-links {
   margin: 0 10px 10px 0;
@@ -1766,7 +1766,7 @@ section {
   font-weight: 700;
   padding: 0 0 0 0;
   margin: 0 0 15px 0;
-  color: #009961;
+  color: #21413C;
   position: relative;
 }
 .blog .sidebar .sidebar-item {
@@ -1814,7 +1814,7 @@ section {
   padding-top: 10px;
 }
 .blog .sidebar .categories ul a {
-  color: #009961;
+  color: #21413C;
   transition: 0.3s;
 }
 .blog .sidebar .categories ul a:hover {
@@ -1834,11 +1834,11 @@ section {
 }
 .blog .sidebar .recent-posts h4 {
   font-size: 15px;
-  margin-left: 95px;
+  /*margin-left: 95px;*/
   font-weight: bold;
 }
 .blog .sidebar .recent-posts h4 a {
-  color: #009961;
+  color: #21413C;
   transition: 0.3s;
 }
 .blog .sidebar .recent-posts h4 a:hover {
@@ -1846,7 +1846,7 @@ section {
 }
 .blog .sidebar .recent-posts time {
   display: block;
-  margin-left: 95px;
+  /*margin-left: 95px;*/
   font-style: italic;
   font-size: 14px;
   color: #aaaaaa;

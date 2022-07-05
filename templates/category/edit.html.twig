@@ -1,0 +1,37 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+    <!-- Page Title -->
+    <div class="pagetitle">
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">Home </a>/ Categories</li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section contact">
+        <div class="row gy-4">
+
+            <!-- Tag Form -->
+            <div class="col-12">
+                <div class="card p-4">
+                    <div class="card-body pb-0">
+                        {{ form_start(form) }}
+                            {{ form_errors(form) }}
+
+                            {{ form_row(form.name) }}
+
+                            {{ form_row(form.save, { 'label': 'Update Category' }) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <!-- End Tag Form -->
+        </div>
+    </section>
+{% endblock %}

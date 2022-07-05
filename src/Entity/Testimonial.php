@@ -19,14 +19,26 @@ class Testimonial
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 100, nullable: true)]
-    private $occupation;
-
     #[ORM\Column(type: 'text', nullable: true)]
-    private $about;
+    private $content;
+
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $position;
+
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $company;
+
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $city;
+
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $country;
 
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $status;
+
+    #[ORM\Column(type: 'datetime')]
+    private $createdAt;
 
     public function getId(): ?int
     {
@@ -57,30 +69,6 @@ class Testimonial
         return $this;
     }
 
-    public function getOccupation(): ?string
-    {
-        return $this->occupation;
-    }
-
-    public function setOccupation(?string $occupation): self
-    {
-        $this->occupation = $occupation;
-
-        return $this;
-    }
-
-    public function getAbout(): ?string
-    {
-        return $this->about;
-    }
-
-    public function setAbout(?string $about): self
-    {
-        $this->about = $about;
-
-        return $this;
-    }
-
     public function getStatus(): ?string
     {
         return $this->status;
@@ -89,6 +77,78 @@ class Testimonial
     public function setStatus(?string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->company;
+    }
+
+    public function setCompany(?string $company): self
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

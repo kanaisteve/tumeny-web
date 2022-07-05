@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ include('backend/partials/_head.twig') }}
+    {{ include('backend/_head.twig') }}
   </head>
   <body>
     <!-- ======= Header ======= -->
-    {{ include('backend/partials/_header.twig') }}
+    {{ include('backend/_header.twig') }}
 
     <!-- ======= Sidebar ======= -->
-    {{ include('backend/partials/_sidebar.twig') }}
+    {{ include('backend/_sidebar.twig') }}
 
     <main id="main" class="main">
       {% block body %}{% endblock %}
     </main><!-- End #main -->
 
     {# {{ include('backend/partials/_modals.twig') }} #}
-    {{ include('backend/partials/_footer.twig') }}
-    {{ include('backend/partials/_scripts.twig') }}
+    {{ include('backend/_footer.twig') }}
+    {{ include('backend/_scripts.twig') }}
     {% block scripts %}{% endblock %}
   </body>
 </html>

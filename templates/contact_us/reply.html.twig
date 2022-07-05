@@ -1,0 +1,105 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+    <!-- Page Title -->
+    <div class="pagetitle">
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section contact">
+        <div class="row gy-4">
+            {# <div class="col-xl-6">
+      <div class="row">
+        <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <p>Hillview, Chalala,<br>Lusaka, Zambia.</p>
+              </div>
+        </div>
+        <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+                <p>+260 966 650 008<br>+260 961 484 633</p>
+              </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="info-box card">
+            <i class="bi bi-envelope"></i>
+            <h3>Email Us</h3>
+            <p>info@tumenypay.com<br>care@tumenypay.com</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-clock"></i>
+                <h3>Open Hours</h3>
+                <p>Monday - Friday<br>8:00AM - 05:00PM</p>
+              </div>
+        </div>
+      </div>
+    </div> #}
+
+            <!-- Contact Form -->
+            <div class="col-xl-12">
+                <div class="card p-4">
+                    <div class="card-body pb-0">
+                        <form action="/contact" method="post">
+
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    {# <label for="name" class="form-label">Your Name</label>  #}
+                                    <input type="text" class="form-control shadow-none" id="name" name="name" placeholder="Your Name" value="" required>
+                                    {# @error('name')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror #}
+                                </div>
+
+                                <div class="col-md-6">
+                                    {# <label for="email" class="form-label">Email Address</label>  #}
+                                    <input type="email" class="form-control shadow-none" id="email" name="email" placeholder="Your Email" value="" required>
+                                    {# @error('email')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror #}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {# <label for="subject" class="form-label">Subject</label>  #}
+                                    <input type="text" class="form-control shadow-none" id="subject" name="subject" placeholder="Subject" value="" required>
+                                    {# @error('subject')
+                    <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror #}
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea class="form-control shadow-none" name="message" rows="6" placeholder="Message" required></textarea>
+                                    {# @error('subject')
+                  <p class="text-danger my-1" style="font-size: 13px">{{ $message }}</p>
+                @enderror #}
+                                </div>
+
+                                <div class="text-center">
+                                    {# @if (session('success'))
+                    <p class="text-success my-2">{{ session('success') }}</p>
+                @endif #}
+                                    <button type="submit" class="btn btn-success">Send Message</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

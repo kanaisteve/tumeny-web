@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @extends ServiceEntityRepository<Tag>
@@ -21,18 +23,24 @@ class TagRepository extends ServiceEntityRepository
         parent::__construct($registry, Tag::class);
     }
 
-    public function add(Tag $entity, bool $flush = false): void
+    public function add(Tag $tag, SluggerInterface $slugger, FormInterface $form, bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        $name = $form->get('name')->getData();
+        $slug = strtolower($slugger->slug($name));
+
+        $tag->setName($name);
+        $tag->setSlug($slug);
+
+        $this->getEntityManager()->persist($tag);
 
         if ($flush) {
             $this->getEntityManager()->flush();
         }
     }
 
-    public function remove(Tag $entity, bool $flush = false): void
+    public function remove(Tag $tag, bool $flush = false): void
     {
-        $this->getEntityManager()->remove($entity);
+        $this->getEntityManager()->remove($tag);
 
         if ($flush) {
             $this->getEntityManager()->flush();

@@ -1,0 +1,83 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+    <!-- Page Title -->
+    <div class="pagetitle">
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">Home </a>/ {{ pageTitle }}</li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section contact">
+        <div class="row gy-4">
+
+            <!-- Tag Form -->
+            <div class="col-12">
+                <div class="card p-4">
+                    <div class="card-body pb-0">
+                        {{ form_start(form) }}
+                            {# {{ form_errors(form) }}#}
+                            <div class="row gy-4">
+                                <div class="col-md-12">
+                                    {{ form_row(form.firstName) }}
+                                    {{ form_errors(form.firstName) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.lastName) }}
+                                    {{ form_errors(form.lastName) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.jobTitle) }}
+                                    {{ form_errors(form.jobTitle) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.about) }}
+                                    {{ form_errors(form.about) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.facebook) }}
+                                    {{ form_errors(form.facebook) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.twitter) }}
+                                    {{ form_errors(form.twitter) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.linkedin) }}
+                                    {{ form_errors(form.linkedin) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.instagram) }}
+                                    {{ form_errors(form.instagram) }}
+                                </div>
+
+                                <div class="col-md-12">
+                                    {{ form_row(form.imagePath) }}
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    {{ form_row(form.save, { 'label': 'Update Details' }) }}
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <!-- End Tag Form -->
+        </div>
+    </section>
+{% endblock %}
+

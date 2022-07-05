@@ -33,10 +33,6 @@
                     </div>
 
                     <div class="col-md-12">
-                        {{ form_row(form.description) }}
-                    </div>
-
-                    <div class="col-md-12">
                         {{ form_row(form.price) }}
                     </div>
 
@@ -52,8 +48,12 @@
                         {{ form_row(form.productImage) }}
                     </div>
 
+                    <div class="col-md-12">
+                        {{ form_row(form.description) }}
+                    </div>
+
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-success">Send Message</button>
+                        <button type="submit" class="btn btn-success">Add Sale</button>
                     </div>
                 </div>
             {{ form_end(form) }}

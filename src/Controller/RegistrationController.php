@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Profile;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,16 +18,22 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
+        $profile = new Profile();
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
-                $userPasswordHasher->hashPassword($user, $form->get('plainPassword')->getData())
+                $userPasswordHasher->hashPassword($user, $form->get('password')->getData())
             );
 
+            $profile->setAvatar('/uploads/avatars/avatar.png');
+            $profile->setUser($user);
+
             $entityManager->persist($user);
+            $entityManager->persist($profile);
             $entityManager->flush();
             // do anything else you need here, like send an email
 

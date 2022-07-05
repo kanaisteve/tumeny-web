@@ -1,0 +1,235 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                {# <a class="nav-link @php if($pageName == 'Customer Dashboard') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/dashboard') }}"> #}
+                <a class="nav-link {{ app.request.get('_route') == 'dashboard'? '' : 'collapsed' }}" href="/dashboard">
+                  <i class="bi bi-grid"></i>
+                  <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+
+{#            {% if is_granted('ROLE_ADMIN') %}#}
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.get('_route') == '/admin/users/'? '' : 'collapsed' }}" href="{{ path('users.index') }}">
+                        <i class="bi bi-grid"></i>
+                        <span>Users</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.get('_route') == 'tags.index'? '' : 'collapsed' }}" href="{{ path('tags.index') }}">
+                        <i class="bi bi-tags"></i>
+                        <span>Tags</span>
+                    </a>
+                </li>
+                <!-- End Tags Nav -->
+{#            {% endif %}#}
+            <!-- End Users Nav -->
+
+            {# <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'collections'? '' : 'collapsed' }}" href="/collections">
+                  <i class="bi bi-cash-stack"></i>
+                  <span>Collections</span>
+                </a>
+            </li> #}
+            <!-- End Collection Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'post.index'? '' : 'collapsed' }}" href="{{ path('post.index') }}">
+                    <i class="bi bi-pin-angle"></i>
+                    <span>Posts</span>
+                </a>
+            </li>
+            <!-- End Posts Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'category.index'? '' : 'collapsed' }}" href="{{ path('category.index') }}">
+                    <i class="bi bi-list-check"></i>
+                    <span>Categories</span>
+                </a>
+            </li>
+            <!-- End Categories Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'testimonials.index'? '' : 'collapsed' }}" href="{{ path('testimonials.index') }}">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                    <span>Testimonials</span>
+                </a>
+            </li>
+            <!-- End Testimonials Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'customer_queries.index'? '' : 'collapsed' }}" href="{{ path('customer_queries.index') }}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Customer Queries</span>
+                </a>
+            </li>
+            <!-- End Customer Queries Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'team.index'? '' : 'collapsed' }}" href="{{ path('team.index') }}">
+                    <i class="bi bi-people"></i>
+                    <span>Team</span>
+                </a>
+            </li>
+            <!-- End Team Nav -->
+
+{#            <li class="nav-item">#}
+{#                <a class="nav-link {{ app.request.get('_route') == 'customers'? '' : 'collapsed' }}" href="{{ path('customers') }}">#}
+{#                    <i class="bi bi-clipboard-check"></i>#}
+{#                    <span>Projects</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Projects Nav -->
+
+{#            <li class="nav-item">#}
+{#                <a class="nav-link {{ app.request.get('_route') == 'customers'? '' : 'collapsed' }}" href="{{ path('customers') }}">#}
+{#                    <i class="bi bi-hdd-rack"></i>#}
+{#                    <span>Services</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Services Nav -->
+        
+{#            <li class="nav-item">#}
+{#                <a class="nav-link {{ app.request.get('_route') == 'transactions'? '' : 'collapsed' }}" href="{{ path('transactions') }}">#}
+{#                    <i class="bi bi-clipboard-check"></i>#}
+{#                    <span>Transactions</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Transactions Nav -->
+
+{#            <li class="nav-item">#}
+{#                #}{# <a class="nav-link @php if($pageName == 'Dashboard') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/admin/dashboard') }}"> #}
+{#                <a class="nav-link {{ app.request.get('_route') == 'products'? '' : 'collapsed' }}" href="/products-and-services">#}
+{#                  <i class="bi bi-boxes"></i>#}
+{#                  <span>Products/Services</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Products/Services Nav -->
+
+{#            <li class="nav-item">#}
+{#                #}{# <a class="nav-link @php if($pageName == 'Customers') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/admin/customers') }}"> #}
+{#                <a class="nav-link  {{ app.request.get('_route') == 'customers'? '' : 'collapsed' }}" href="/customers">#}
+{#                  <i class="bi bi-people"></i>#}
+{#                  <span>Customers</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Users Nav -->
+
+{#            <li class="nav-item">#}
+{#                #}{# <a class="nav-link @php if($pageName == 'Users') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/admin/users') }}"> #}
+{#                <a class="nav-link {{ app.request.get('_route') == 'suppliers'? '' : 'collapsed' }}" href="/suppliers">#}
+{#                  <i class="bi bi-truck"></i>#}
+{#                  <span>Suppliers</span>#}
+{#                </a>#}
+{#            </li>#}
+            <!-- End Suppliers Nav -->
+
+            {# <li class="nav-item">
+                <a class="nav-link @php if($pageName == 'Bank Deposits') { echo ''; } else { echo 'collapsed'; } @endphp" href=""  data-bs-toggle="modal" data-bs-target="#bankDeposits">
+                    <i class="bi bi-bank"></i>
+                    <span>Bank Deposits</span>
+                </a>
+            </li>  #}
+
+            <!-- End Bank Deposits Nav -->
+
+            {#  <li class="nav-item">
+                <a class="nav-link @php if($pageName == 'Make Payment') { echo ''; } else { echo 'collapsed'; } @endphp" data-bs-target="#payments-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-credit-card"></i><span>Make Payment</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="payments-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#singlePayment">
+                            <i class="bi bi-circle"></i><span>Single Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#bulkPayment">
+                                <i class="bi bi-circle"></i><span>Bulk Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#internationalPayment">
+                                <i class="bi bi-circle"></i><span>International Payment</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>  #}
+            <!-- End Payment Nav  -->
+
+            {# <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#loans-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link @php if($pageName == 'Pending Loans') { echo ''; } else if($pageName == 'Approved Loans') { echo ''; } else if($pageName == 'Rejected Loans') { echo ''; } else if($pageName == 'Disbursed Loans') { echo ''; } else if($pageName == 'Cleared Loans') { echo ''; } else if($pageName == 'Defaulted Loans') { echo ''; }  else { echo 'collapsed'; }  @endphp" data-bs-target="#loans-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Loans</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="loans-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                    <a href="{{ url('/admin/loans/pending') }}">
+                    <a href="#">
+                            <i class="bi bi-circle"></i><span>Pending</span>
+                        </a>
+                    </li><!-- End Pending -->
+                    <li>
+                        <a href="{{ url('/admin/loans/approved') }}">
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Approved</span>
+                        </a>
+                    </li><!-- End Approved -->
+                    <li>
+                        <a href="{{ url('/admin/loans/rejected') }}">
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Rejected</span>
+                        </a>
+                    </li><!-- End Rejected -->
+                </ul>
+            </li>  #}
+            <!-- End Reports  -->
+
+            {# <li class="nav-item">
+                <a href="#" class="nav-link @php if($pageName == 'Interest Rates') { echo ''; } else { echo 'collapsed'; }  @endphp" data-bs-target="#manage-nav" data-bs-toggle="collapse" href="#">
+                <a href="#" class="nav-link collapsed" data-bs-target="#manage-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="manage-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="">
+                            <i class="bi bi-piggy-bank"></i><span>Interest Rates</span>
+                        </a>
+                    </li>
+                    <!-- End Interest Rates -->
+                </ul>
+            </li>  #}
+            <!-- End Manage  -->
+
+            {# <li class="nav-item">
+                <a class="nav-link @php if($pageName == 'Frequently Asked Questions') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/faq') }}">
+                <a class="nav-link collapsed" href="/contact">
+                    <i class="bi bi-envelope"></i>
+                    <span>Messages</span>
+                </a>
+            </li> #}
+            <!-- End F.A.Q Nav -->
+
+            {# <li class="nav-item">
+                <a class="nav-link @php if($pageName == 'Frequently Asked Questions') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/faq') }}">
+                <a class="nav-link collapsed" href="/faqs">
+                    <i class="bi bi-question-circle"></i>
+                    <span>F.A.Qs</span>
+                </a>
+            </li> #}
+            <!-- End F.A.Q Nav -->
+
+            {# <li class="nav-item">
+                <a class="nav-link @php if($pageName == 'Users') { echo ''; } else { echo 'collapsed'; } @endphp" href="{{ url('/admin/users') }}">
+                <a class="nav-link collapsed" href="/settings">
+                  <i class="bi bi-gear"></i>
+                  <span>Settings</span>
+                </a>
+            </li> #}
+            <!-- End Settings Nav -->
+    </ul>
+</aside><!-- End Sidebar-->

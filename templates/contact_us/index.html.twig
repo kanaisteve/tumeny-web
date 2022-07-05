@@ -1,0 +1,91 @@
+{% extends 'backend/base.html.twig' %}
+
+{# {% block title %}Register{% endblock %} #}
+
+{% block body %}
+    <!-- Page Title -->
+    <div class="pagetitle">
+        <h1>{{ pageTitle }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section contact">
+        <div class="row gy-4">
+
+            <!-- Recent Transaction -->
+            <div class="col-12">
+                <div class="card recent-sales">
+
+                    <div class="card-body pt-3">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Customer Queries <span>({{ contactuses|length }})</span></h5>
+                            <div class="mb-2 mb-lg-0">
+                                <a href="{{ path('customer_queries.compose.msg') }}" class="btn btn-sm btn-success"><i class="bi bi-plus"></i> Compose Message</a>
+                            </div>
+                        </div>
+
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+{#                                    <th scope="col">FirstName</th>#}
+{#                                    <th scope="col">LastName</th>#}
+                                    <th scope="col">Name</th>
+                                    <th scope="col">MobileNumber</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Subject</th>
+{#                                    <th scope="col">Body</th>#}
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Date</th>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <th scope="col">actions</th>
+                                    {% endif %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for contact_u in contactuses %}
+                                <tr>
+                                    <td>{{ contact_u.id }}</td>
+{#                                    <td>{{ contact_u.firstName }}</td>#}
+{#                                    <td>{{ contact_u.lastName }}</td>#}
+                                    <td>{{ contact_u.name }}</td>
+                                    <td>{{ contact_u.mobileNumber }}</td>
+                                    <td>{{ contact_u.email }}</td>
+                                    <td>{{ contact_u.subject }}</td>
+{#                                    <td>{{ contact_u.body }}</td>#}
+                                    <td>{{ contact_u.status }}</td>
+                                    <td>{{ contact_u.createdAt|date('M d, Y') }}</td>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <td>
+                                            <a href="{{ path('customer_queries.show', {'id': contact_u.id}) }}" class="btn btn-success btn-xs"><i class="bi bi-eye"></i></a>
+                                            <a href="{{ path('customer_queries.delete', {'id': contact_u.id}) }}"
+                                               class="btn btn-danger btn-xs"
+                                               onclick="return confirm('Are you sure you want to delete this item?');">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="10" class="text-center">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Recent Transaction -->
+
+        </div>
+    </section>
+{% endblock %}
+

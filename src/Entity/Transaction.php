@@ -20,13 +20,25 @@ class Transaction
     private $customerName;
 
     #[ORM\Column(type: 'string', length: 100)]
+    private $productName;
+
+    #[ORM\Column(type: 'string', length: 100)]
     private $txnType;
 
     #[ORM\Column(type: 'integer')]
-    private $txnId;
+    private $qty;
+
+    #[ORM\Column(type: 'integer')]
+    private $price;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $vat;
 
     #[ORM\Column(type: 'integer')]
     private $amount;
+
+    #[ORM\Column(type: 'integer')]
+    private $txnId;
 
     public function getId(): ?int
     {
@@ -57,6 +69,18 @@ class Transaction
         return $this;
     }
 
+    public function getProductName(): ?string
+    {
+        return $this->productName;
+    }
+
+    public function setProductName(string $productName): self
+    {
+        $this->productName = $productName;
+
+        return $this;
+    }
+
     public function getTxnType(): ?string
     {
         return $this->txnType;
@@ -69,14 +93,38 @@ class Transaction
         return $this;
     }
 
-    public function getTxnId(): ?int
+    public function getQty(): ?int
     {
-        return $this->txnId;
+        return $this->qty;
     }
 
-    public function setTxnId(int $txnId): self
+    public function setQty(int $qty): self
     {
-        $this->txnId = $txnId;
+        $this->qty = $qty;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getVat(): ?int
+    {
+        return $this->vat;
+    }
+
+    public function setVat(?int $vat): self
+    {
+        $this->vat = $vat;
 
         return $this;
     }
@@ -89,6 +137,18 @@ class Transaction
     public function setAmount(int $amount): self
     {
         $this->amount = $amount;
+
+        return $this;
+    }
+
+    public function getTxnId(): ?int
+    {
+        return $this->txnId;
+    }
+
+    public function setTxnId(int $txnId): self
+    {
+        $this->txnId = $txnId;
 
         return $this;
     }

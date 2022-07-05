@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Form\Form;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @extends ServiceEntityRepository<Category>
@@ -21,9 +24,15 @@ class CategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Category::class);
     }
 
-    public function add(Category $entity, bool $flush = false): void
+    public function add(Category $category, SluggerInterface $slugger, FormInterface $form, bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        $name = $form->get('name')->getData();
+        $slug = strtolower($slugger->slug($name));
+
+        $category->setName($name);
+        $category->setSlug($slug);
+
+        $this->getEntityManager()->persist($category);
 
         if ($flush) {
             $this->getEntityManager()->flush();

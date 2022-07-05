@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<title>Team</title>
+
+{% block body %}
+    <h1>Team</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ team.id }}</td>
+            </tr>
+            <tr>
+                <th>ImagePath</th>
+                <td>{{ team.imagePath }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ team.firstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ team.lastName }}</td>
+            </tr>
+            <tr>
+                <th>JobTitle</th>
+                <td>{{ team.jobTitle }}</td>
+            </tr>
+            <tr>
+                <th>About</th>
+                <td>{{ team.about }}</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td>{{ team.facebook }}</td>
+            </tr>
+            <tr>
+                <th>Twitter</th>
+                <td>{{ team.twitter }}</td>
+            </tr>
+            <tr>
+                <th>Linkedin</th>
+                <td>{{ team.linkedin }}</td>
+            </tr>
+            <tr>
+                <th>Instagram</th>
+                <td>{{ team.instagram }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_team_index') }}">back to list</a>
+
+    <a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
+
+    {{ include('team/_delete_form.html.twig') }}
+{% endblock %}

@@ -3,8 +3,14 @@
 namespace App\Repository;
 
 use App\Entity\Team;
+use App\Service\AvatarUploader;
+use App\Service\FileUploader;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @extends ServiceEntityRepository<Team>
@@ -16,14 +22,56 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TeamRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private $slugger;
+    private $avatarUploader;
+    public function __construct(ManagerRegistry $registry, SluggerInterface $slugger, AvatarUploader $avatarUploader)
     {
         parent::__construct($registry, Team::class);
+        $this->slugger = $slugger;
+        $this->avatarUploader = $avatarUploader;
     }
 
-    public function add(Team $entity, bool $flush = false): void
+    public function add(Team $team, FormInterface $form,  bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        $team = $form->getData();
+
+        /** @var UploadedFile $avatar */
+        $avatar = $form->get('imagePath')->getData();
+        if ($avatar) {
+            $avatar = $this->avatarUploader->upload($avatar);
+            $team->setImagePath($avatar);
+        }
+
+        $this->getEntityManager()->persist($team);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function addWithFile(Team $team, FormInterface $form, string $targetDirectory,  bool $flush = false): void
+    {
+
+        $team = $form->getData();
+
+        $thumbnail = $form->get('imagePath')->getData();
+        if ($thumbnail) {   // thumbnail must be processed only when a file is uploaded
+            $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
+
+            $safeFilename = $this->slugger->slug($originalFilename);    // this is needed to safely include the file name as part of the URL
+            $newFilename = $safeFilename.'-'.uniqid().'.'.$thumbnail->guessExtension();
+
+            try {   // Move the file to the directory where posts are stored
+                $thumbnail->move($targetDirectory, $newFilename);
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+
+            // store the post image name instead of its contents
+            $team->setImagePath($newFilename);
+        }
+
+        $this->getEntityManager()->persist($team);
 
         if ($flush) {
             $this->getEntityManager()->flush();

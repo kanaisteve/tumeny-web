@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\ContactUs;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
@@ -35,6 +36,14 @@ class ContactUsType extends AbstractType
                     'placeholder' => 'Your Email'
                 ],
             ])
+            ->add('mobileNumber', IntegerType::class, [
+                'label' => false,
+                'attr' => [
+                    // 'autocomplete' => 'mobileNumber',
+                    'class' => 'form-control shadow-none',
+                    'placeholder' => 'Enter mobile number'
+                ],
+            ])
             ->add('subject', TextType::class, [
                 'label' => false,
                 'attr' => [
@@ -53,6 +62,11 @@ class ContactUsType extends AbstractType
                 ],
             ])
             // ->add('status')
+            ->add('save', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-sm btn-success',
+                ],
+            ])
         ;
     }
 

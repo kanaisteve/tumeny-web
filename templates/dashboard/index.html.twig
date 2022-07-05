@@ -20,8 +20,185 @@
         <!-- Left side columns -->
         <div class="col-sm-12">
             <div class="row">
-                <!-- Balance Card -->
+                <!-- Post Card -->
+                 <div class="col-xxl-4 col-lg-4">
+                     <a href="{{ path('post.index') }}" style="color: #21413C">
+                         <div class="card info-card sales-card">
+                             <div class="card-body">
+                                 {#                            <h5 class="card-title">Wallet <span>| Today</span></h5>#}
+
+                                 <div class="d-flex align-items-center justify-content-between">
+                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                         <i class="bi bi-pin-angle"></i>
+                                     </div>
+                                     <div class="py-3 ps-3 float-right">
+                                         <p><b>Posts</b></p>
+                                         <span class="text-success small fw-bold">{{ posts|length }}</span>
+                                         {#                                    <span class="text-muted small pt-2 ps-1">increase</span>#}
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </a>
+                </div>
+                <!-- End Post Card -->
+
+                <!-- Categories Card -->
                 <div class="col-xxl-4 col-lg-4">
+                    <a href="{{ path('category.index') }}" style="color: #21413C">
+                        <div class="card info-card expenses-card">
+                            <div class="card-body">
+                                {# <h5 class="card-title">Wallet <span>| Today</span></h5> #}
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-list-check"></i>
+                                    </div>
+                                    <div class="py-3 ps-3">
+                                        <p><b>Categories</b></p>
+                                        <span class="text-success small fw-bold">{{ categories|length }}</span>
+                                        {#<span class="text-muted small pt-2 ps-1">increase</span>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Categories Card -->
+
+                <!-- Tags Card -->
+                <div class="col-xxl-4 col-lg-4">
+                    <a href="{{ path('tags.index') }}" style="color: #21413C">
+                        <div class="card info-card suppliers-card">
+                            <div class="card-body">
+                                {# <h5 class="card-title">Wallet <span>| Today</span></h5> #}
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-tags"></i>
+                                    </div>
+                                    <div class="py-3 ps-3">
+                                        <p><b>Tags</b></p>
+                                        <span class="text-success small fw-bold">{{ tags|length }}</span>
+                                        {#<span class="text-muted small pt-2 ps-1">increase</span>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Tags Card -->
+
+                <!-- Testimonials Card -->
+                <div class="col-xxl-4 col-lg-4">
+                    <a href="{{ path('testimonials.index') }}" style="color: #21413C">
+                        <div class="card info-card balance-card">
+                            <div class="card-body">
+                                {# <h5 class="card-title">Wallet <span>| Today</span></h5> #}
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-hand-thumbs-up"></i>
+                                    </div>
+                                    <div class="py-3 ps-3">
+                                        <p><b>Testimonials</b></p>
+                                        <span class="text-success small fw-bold">{{ testimonials|length }}</span>
+                                        {#<span class="text-muted small pt-2 ps-1">increase</span>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <!-- End Testimonials Card -->
+
+                <!-- Queries Card -->
+                <div class="col-xxl-4 col-lg-4">
+                    <a href="{{ path('customer_queries.index') }}" style="color: #21413C">
+                        <div class="card info-card expenses-card">
+                            <div class="card-body">
+                                {# <h5 class="card-title">Wallet <span>| Today</span></h5> #}
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-envelope"></i>
+                                    </div>
+                                    <div class="py-3 ps-3">
+                                        <p><b>Queries</b></p>
+                                        <span class="text-success small fw-bold">{{ queries|length }}</span>
+                                        {#<span class="text-muted small pt-2 ps-1">increase</span>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <!-- End Queries Card -->
+
+                <!-- Users Card -->
+                <div class="col-xxl-4 col-lg-4">
+                    <a href="{{ path('users.index') }}" style="color: #21413C">
+                        <div class="card info-card customers-card">
+                            <div class="card-body">
+                                {# <h5 class="card-title">Wallet <span>| Today</span></h5> #}
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="py-3 ps-3">
+                                        <p><b>Users</b></p>
+                                        <span class="text-success small fw-bold">{{ users|length }}</span>
+                                        {#<span class="text-muted small pt-2 ps-1">increase</span>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <!-- End Users Card -->
+
+                <!-- Services Card -->
+{#                <div class="col-xxl-3 col-lg-3">#}
+{#                    <div class="card info-card sales-card">#}
+{#                        <div class="card-body">#}
+
+{#                            <div class="d-flex align-items-center justify-content-between">#}
+{#                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">#}
+{#                                    <i class="bi bi-hdd-rack"></i>#}
+{#                                </div>#}
+{#                                <div class="py-3 ps-3">#}
+{#                                    <p><b>Services</b></p>#}
+{#                                    <span class="text-success small fw-bold">16</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Services Card -->
+
+                <!-- Projects Card -->
+{#                <div class="col-xxl-3 col-lg-3">#}
+{#                    <div class="card info-card suppliers-card">#}
+{#                        <div class="card-body">#}
+{#                            <div class="d-flex align-items-center justify-content-between">#}
+{#                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">#}
+{#                                    <i class="bi bi-clipboard-check"></i>#}
+{#                                </div>#}
+{#                                <div class="py-3 ps-3">#}
+{#                                    <p><b>Projects</b></p>#}
+{#                                    <span class="text-success small fw-bold">16</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Projects Card -->
+
+                <!-- Balance Card -->
+                {# <div class="col-xxl-4 col-lg-4">
                     <div class="card info-card balance-card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -45,16 +222,17 @@
                                 </div>
                                 <div class="ps-3">
                                     <h6>K14,055</h6>
-                                    <span class="text-success small pt-1 fw-bold">12%</span> 
+                                    <span class="text-success small pt-1 fw-bold">12%</span>
                                     <span class="text-muted small pt-2 ps-1">increase</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- End Sales Card -->
+                </div> #}
+                <!-- End Balance Card -->
 
                 <!-- Revenue Card -->
-                <div class="col-xxl-4 col-lg-4">
+                {# <div class="col-xxl-4 col-lg-4">
                     <div class="card info-card revenue-card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -78,17 +256,18 @@
                                 </div>
                                 <div class="ps-3">
                                     <h6>K37,264</h6>
-                                    <span class="text-success small pt-1 fw-bold">8%</span> 
+                                    <span class="text-success small pt-1 fw-bold">8%</span>
                                     <span class="text-muted small pt-2 ps-1">increase</span>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                </div><!-- End Revenue Card -->
+                </div> #}
+                <!-- End Revenue Card -->
 
                 <!-- Expenses Card -->
-                <div class="col-xxl-4 col-lg-4">
+                {# <div class="col-xxl-4 col-lg-4">
                     <div class="card info-card expenses-card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -112,17 +291,18 @@
                                 </div>
                                 <div class="ps-3">
                                     <h6>21,045</h6>
-                                    <span class="text-success small pt-1 fw-bold">12%</span> 
+                                    <span class="text-success small pt-1 fw-bold">12%</span>
                                     <span class="text-muted small pt-2 ps-1">increase</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- End Expenses Card -->
+                </div> #}
+                <!-- End Expenses Card -->
 
                 
                 <!-- Transactions Card -->
-                <div class="col-xxl-4 col-lg-4">
+                {# <div class="col-xxl-4 col-lg-4">
                     <div class="card info-card sales-card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -152,12 +332,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> #}
                 <!-- End Transactions Card -->
 
                
                 <!-- Customers Card -->
-                <div class="col-xxl-4 col-lg-4">
+                {# <div class="col-xxl-4 col-lg-4">
 
                     <div class="card info-card customers-card">
                         <div class="filter">
@@ -190,10 +370,11 @@
                         </div>
                     </div>
 
-                </div><!-- End Customers Card -->
+                </div> #}
+                <!-- End Customers Card -->
 
                 <!-- Suppliers Card -->
-                <div class="col-xxl-4 col-lg-4">
+                {# <div class="col-xxl-4 col-lg-4">
                     <div class="card info-card suppliers-card">
                         <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -223,9 +404,200 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- End Suppliers Card -->
+                </div> #}
+                <!-- End Suppliers Card -->
 
-                <!-- Recent Transaction -->
+                <!-- Recent Sales Report (Daily, Weekly, Monthly and Yearly) -->
+{#                <div class="col-6">#}
+{#                    <div class="card recent-sales">#}
+
+{#                        <div class="filter">#}
+{#                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>#}
+{#                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">#}
+{#                                <li class="dropdown-header text-start">#}
+{#                                    <h6>Filter</h6>#}
+{#                                </li>#}
+
+{#                                <li><a class="dropdown-item" href="#">Today</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Month</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Year</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+
+{#                        <div class="card-body">#}
+{#                            #}{# <h5 class="card-title">Recent Sales <span>| Today</span></h5> #}
+{#                            <h5 class="card-title">Recent Sales <span>| {{ currentDate|date('d M, Y H:i:s') }}</span></h5>#}
+
+{#                            <table class="table table-borderless datatable">#}
+{#                                <thead>#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="col">Transaction Date</th> #}
+{#                                        <th scope="col">Date</th>#}
+{#                                        <th scope="col">Amount</th>#}
+{#                                        #}{# <th scope="col">Transaction Type</th> #}
+{#                                    </tr>#}
+{#                                </thead>#}
+{#                                <tbody>#}
+{#                                    {% for sale in latestSales %}#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="row"><a href="#">2022-05-17</a></th> #}
+{#                                        <td>{{ sale.txnDate|date('M d, Y') }}</td>#}
+{#                                        <td class="text-success">{{ sale.amount|format_number({fraction_digit: 2})  }}</td>#}
+{#                                        #}{# <td class="text-danger">{{ sale.amount|format_currency('ZMW') }}</td> #}
+{#                                        #}{# <td>{{ sale.txnType }}</td> #}
+{#                                    </tr>#}
+{#                                    {% endfor %}#}
+{#                                </tbody>#}
+{#                            </table>#}
+{#                        </div>#}
+
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Recent Sales Report (Daily, Weekly, Monthly and Yearly) -->
+
+                <!-- Recent Expenses Report (Daily, Weekly, Monthly and Yearly) -->
+{#                <div class="col-6">#}
+{#                    <div class="card recent-sales">#}
+
+{#                        <div class="filter">#}
+{#                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>#}
+{#                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">#}
+{#                                <li class="dropdown-header text-start">#}
+{#                                    <h6>Filter</h6>#}
+{#                                </li>#}
+
+{#                                <li><a class="dropdown-item" href="#">Today</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Month</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Year</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">Recent Expenses <span>| Today</span></h5>#}
+
+{#                            <table class="table table-borderless datatable">#}
+{#                                <thead>#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="col">Transaction Date</th> #}
+{#                                        <th scope="col">Date</th>#}
+{#                                        <th scope="col">Amount</th>#}
+{#                                        #}{# <th scope="col">Transaction Type</th> #}
+{#                                    </tr>#}
+{#                                </thead>#}
+{#                                <tbody>#}
+{#                                    {% for expense in latestExpenses %}#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="row"><a href="#">2022-05-17</a></th> #}
+{#                                        <td>{{ expense.txnDate |date('M d, Y') }}</td>#}
+{#                                        <td class="text-danger">-{{ expense.amount|format_number({fraction_digit: 2})  }}</td>#}
+{#                                        #}{# <td class="text-danger">{{ expense.amount|format_currency('ZMW') }}</td> #}
+{#                                        #}{# <td>{{ expense.txnType }}</td> #}
+{#                                    </tr>#}
+{#                                    {% endfor %}#}
+{#                                </tbody>#}
+{#                            </table>#}
+{#                        </div>#}
+
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Recent Expenses Report (Daily, Weekly, Monthly and Yearly) -->
+
+                <!-- Monthly Sales Report -->
+{#                <div class="col-6">#}
+{#                    <div class="card recent-sales">#}
+
+{#                        <div class="filter">#}
+{#                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>#}
+{#                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">#}
+{#                                <li class="dropdown-header text-start">#}
+{#                                    <h6>Filter</h6>#}
+{#                                </li>#}
+
+{#                                <li><a class="dropdown-item" href="#">Today</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Month</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Year</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+
+{#                        <div class="card-body">#}
+{#                            #}{# <h5 class="card-title">Recent Sales <span>| Today</span></h5> #}
+{#                            <h5 class="card-title">Monthly Sales <span>| Monthly</span></h5>#}
+
+{#                            <table class="table table-borderless datatable">#}
+{#                                <thead>#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="col">Transaction Date</th> #}
+{#                                        <th scope="col">Date</th>#}
+{#                                        <th scope="col">Amount</th>#}
+{#                                        <th scope="col">Transaction Type</th>#}
+{#                                    </tr>#}
+{#                                </thead>#}
+{#                                <tbody>#}
+{#                                    {% for sale in latestSales %}#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="row"><a href="#">2022-05-17</a></th> #}
+{#                                        <td>{{ sale.txnDate|date('M d') }}</td>#}
+{#                                        <td class="text-success">{{ sale.amount|format_number({fraction_digit: 2})  }}</td>#}
+{#                                        #}{# <td class="text-danger">{{ sale.amount|format_currency('ZMW') }}</td> #}
+{#                                        <td>{{ sale.txnType }}</td>#}
+{#                                    </tr>#}
+{#                                    {% endfor %}#}
+{#                                </tbody>#}
+{#                            </table>#}
+{#                        </div>#}
+
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Monthly Sales Report -->
+
+                <!-- Monthly Expenses Report  -->
+{#                <div class="col-6">#}
+{#                    <div class="card recent-sales">#}
+
+{#                        <div class="filter">#}
+{#                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>#}
+{#                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">#}
+{#                                <li class="dropdown-header text-start">#}
+{#                                    <h6>Filter</h6>#}
+{#                                </li>#}
+
+{#                                <li><a class="dropdown-item" href="#">Today</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Month</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Year</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">Monthly Expenses <span>| Monthly</span></h5>#}
+
+{#                            <table class="table table-borderless datatable">#}
+{#                                <thead>#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="col">Transaction Date</th> #}
+{#                                        <th scope="col">Date</th>#}
+{#                                        <th scope="col">Amount</th>#}
+{#                                        <th scope="col">Transaction Type</th>#}
+{#                                    </tr>#}
+{#                                </thead>#}
+{#                                <tbody>#}
+{#                                    {% for expense in latestExpenses %}#}
+{#                                    <tr>#}
+{#                                        #}{# <th scope="row"><a href="#">2022-05-17</a></th> #}
+{#                                        <td>{{ expense.txnDate |date('M d') }}</td>#}
+{#                                        <td class="text-danger">-{{ expense.amount|format_number({fraction_digit: 2})  }}</td>#}
+{#                                        #}{# <td class="text-danger">{{ expense.amount|format_currency('ZMW') }}</td> #}
+{#                                        <td>{{ expense.txnType }}</td>#}
+{#                                    </tr>#}
+{#                                    {% endfor %}#}
+{#                                </tbody>#}
+{#                            </table>#}
+{#                        </div>#}
+
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Month Expenses Report -->
+
+                <!-- Recent Posts -->
                 <div class="col-12">
                     <div class="card recent-sales">
 
@@ -243,60 +615,135 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                            <h5 class="card-title">Recent Posts <span>| Today</span></h5>
 
                             <table class="table table-borderless datatable">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Transaction Date</th>
-                                        <th scope="col">Customer</th>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Price</th>
+                                        <th scope="col">Id</th>
+                                        {# <th scope="col">ImagePath</th>#}
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Slug</th>
+                                        {# <th scope="col">Excerpt</th> #}
+                                        {# <th scope="col">Content</th>#}
+                                        {# <th scope="col">String</th>#}
                                         <th scope="col">Status</th>
+                                        <th scope="col">CreatedAt</th>
+                                        {# <th scope="col">PublishedAt</th>#}
+                                        {#  <th scope="col">ViewCount</th>#}
+                                        <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row"><a href="#">2022-05-17</a></th>
-                                        <td>Brandon Jacob</td>
-                                        <td><a href="#" class="text-success">Laptop</a></td>
-                                        <td>K64</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2022-05-16</a></th>
-                                        <td>Bridie Kessler</td>
-                                        <td><a href="#" class="text-success">Building blocks</a></td>
-                                        <td>K47</td>
-                                        <td><span class="badge bg-warning">Pending</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2022-04-19</a></th>
-                                        <td>Chiinga Musonda</td>
-                                        <td><a href="#" class="text-success">Router</a></td>
-                                        <td>K147</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2022-04-04</a></th>
-                                        <td>Angus Grady</td>
-                                        <td><a href="#" class="text-success">Trucker</a></td>
-                                        <td>$67</td>
-                                        <td><span class="badge bg-danger">Rejected</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2022-04-24</a></th>
-                                        <td>Raheem Lehner</td>
-                                        <td><a href="#" class="text-success">Chicken Feed</a></td>
-                                        <td>$165</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                    </tr>
+                                    {% for post in posts %}
+                                        <tr>
+                                            <td>{{ post.id }}</td>
+                                            {# <td>{{ post.imagePath }}</td>#}
+                                            <td><a href="{{ path('articles.single', {'slug': post.slug}) }}" class="text-success">{{ post.title }}</a></td>
+                                            <td>{{ post.slug }}</td>
+                                            {# <td>{{ post.excerpt }}</td> #}
+                                            {# <td>{{ post.content }}</td>#}
+                                            {# td>{{ post.string }}</td>#}
+                                            <td>{{ post.status }}</td>
+                                            <td>{{ post.createdAt ? post.createdAt|date('M d, Y') : '' }}</td>
+                                            {# <td>{{ post.publishedAt ? post.publishedAt|date('Y-m-d H:i:s') : '' }}</td>#}
+                                            {# <td>{{ post.viewCount }}</td>#}
+                                            <td>
+                                                <a href="{{ path('post.edit', {'id': post.id}) }}" class="btn btn-success btn-xs"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="{{ path('post.delete', {'id': post.id}) }}"
+                                                   class="btn btn-danger btn-xs"
+                                                   onclick="return confirm('Are you sure you want to delete this item?');">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="12" class="text-center">no records found</td>
+                                        </tr>
+                                    {% endfor %}
+{#                                    <tr>#}
+{#                                        <th scope="row"><a href="#">2022-05-17</a></th>#}
+{#                                        <td>Brandon Jacob</td>#}
+{#                                        <td><a href="#" class="text-success">Laptop</a></td>#}
+{#                                        <td>K64</td>#}
+{#                                        <td><span class="badge bg-success">Approved</span></td>#}
+{#                                    </tr>#}
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-                </div><!-- End Recent Transaction -->
+                </div>
+                <!-- End Recent Posts -->
+
+                <!-- Recent Products -->
+{#                <div class="col-12">#}
+{#                    <div class="card recent-sales">#}
+
+{#                        <div class="filter">#}
+{#                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>#}
+{#                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">#}
+{#                                <li class="dropdown-header text-start">#}
+{#                                    <h6>Filter</h6>#}
+{#                                </li>#}
+
+{#                                <li><a class="dropdown-item" href="#">Today</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Month</a></li>#}
+{#                                <li><a class="dropdown-item" href="#">This Year</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">Recent Products <span>| Today</span></h5>#}
+
+{#                            <table class="table table-borderless datatable">#}
+{#                                <thead>#}
+{#                                <tr>#}
+{#                                    <th scope="col">Order Date</th>#}
+{#                                    <th scope="col">Product</th>#}
+{#                                    <th scope="col">Price</th>#}
+{#                                    <th scope="col">Status</th>#}
+{#                                </tr>#}
+{#                                </thead>#}
+{#                                <tbody>#}
+{#                                <tr>#}
+{#                                    <th scope="row"><a href="#">2022-05-17</a></th>#}
+{#                                    <td><a href="#" class="text-success">Laptop</a></td>#}
+{#                                    <td>K64</td>#}
+{#                                    <td><span class="badge bg-success">Approved</span></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <th scope="row"><a href="#">2022-05-16</a></th>#}
+{#                                    <td><a href="#" class="text-success">Building blocks</a></td>#}
+{#                                    <td>K47</td>#}
+{#                                    <td><span class="badge bg-warning">Pending</span></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <th scope="row"><a href="#">2022-04-19</a></th>#}
+{#                                    <td><a href="#" class="text-success">Router</a></td>#}
+{#                                    <td>K147</td>#}
+{#                                    <td><span class="badge bg-success">Approved</span></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <th scope="row"><a href="#">2022-04-04</a></th>#}
+{#                                    <td><a href="#" class="text-success">Trucker</a></td>#}
+{#                                    <td>$67</td>#}
+{#                                    <td><span class="badge bg-danger">Rejected</span></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <th scope="row"><a href="#">2022-04-24</a></th>#}
+{#                                    <td><a href="#" class="text-success">Chicken Feed</a></td>#}
+{#                                    <td>$165</td>#}
+{#                                    <td><span class="badge bg-success">Approved</span></td>#}
+{#                                </tr>#}
+{#                                </tbody>#}
+{#                            </table>#}
+{#                        </div>#}
+
+{#                    </div>#}
+{#                </div>#}
+                <!-- End Recent Products -->
             </div>
         </div>
         <!-- End Left side columns -->

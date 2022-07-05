@@ -64,6 +64,11 @@ class Profile
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $nrcBack;
 
+    # One profile belongs to one user
+    #[ORM\OneToOne(inversedBy: 'profile', targetEntity: User::class, cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id', nullable: false)]
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -269,6 +274,18 @@ class Profile
     public function setNrcBack(string $nrcBack): self
     {
         $this->nrcBack = $nrcBack;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

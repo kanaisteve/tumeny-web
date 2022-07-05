@@ -22,6 +22,9 @@ class ContactUs
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $name;
 
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $mobileNumber;
+
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $email;
 
@@ -33,6 +36,12 @@ class ContactUs
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $status;
+
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $createdAt;
+
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $updatedAt;
 
     public function getId(): ?int
     {
@@ -119,6 +128,42 @@ class ContactUs
     public function setStatus(?string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getMobileNumber(): ?int
+    {
+        return $this->mobileNumber;
+    }
+
+    public function setMobileNumber(?int $mobileNumber): self
+    {
+        $this->mobileNumber = $mobileNumber;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

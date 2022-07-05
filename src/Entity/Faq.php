@@ -19,6 +19,9 @@ class Faq
     #[ORM\Column(type: 'text', nullable: true)]
     private $answer;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $excerpt;
+
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $status;
 
@@ -47,6 +50,18 @@ class Faq
     public function setAnswer(?string $answer): self
     {
         $this->answer = $answer;
+
+        return $this;
+    }
+
+    public function getExcerpt(): ?string
+    {
+        return $this->excerpt;
+    }
+
+    public function setExcerpt(string $excerpt): self
+    {
+        $this->excerpt = $excerpt;
 
         return $this;
     }
